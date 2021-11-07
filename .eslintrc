@@ -1,0 +1,57 @@
+﻿{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true,
+		"jquery": true
+	},
+	"extends": ["standard"],
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"requireConfigFile": false,
+		"ecmaVersion": 2018
+	},
+	"rules": {
+		"semi": [
+			"error",
+			"always"
+		],
+		"eqeqeq": "off",
+		"padding-line-between-statements": [
+			"error",
+			{ "blankLine": "always", "prev": "*", "next": "return"
+			},
+			{
+				"blankLine": "always",
+				"prev": "*",
+				"next": [
+					"if", "function", "for", "do", "while"
+				]
+			},
+			{
+				"blankLine": "always",
+				"prev": [
+					"if", "function", "for", "do", "while"
+				],
+				"next": "*"
+			},
+			{
+				"blankLine": "always",
+				"prev": [
+					"import",
+					"export"
+				],
+				"next": ["const", "let", "function"]
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": "test/**/*.js",
+			"rules": {
+				"no-undef": "warn",
+				"no-unused-expressions": "warn"
+			}
+		}
+	]
+}
